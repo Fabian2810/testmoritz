@@ -10,11 +10,12 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -25,7 +26,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build with Maven
-        run: mvn verify
+        run: cd cicdscriptuebung && mvn verify
       - name: Upload artifacts
         uses: actions/upload-artifact@main
         with:
